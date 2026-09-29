@@ -1,7 +1,7 @@
 import express from "express";
 import { initDB } from "./database/db.js";
 import config from "./config/index.js";
-
+import taskRoutes from "./modules/task/task.route.js";
 const app = express();
 
 app.use(express.json());
@@ -11,10 +11,7 @@ const port = config.port;
  initDB();
 
 
-// app.use("/api/v1/auth", authRoute);
-
-
-
+app.use("/api/tasks", taskRoutes);
 
 app.get("/", (req, res) => {
   res.status(200).json({
