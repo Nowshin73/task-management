@@ -11,7 +11,7 @@ const port = config.port;
  initDB();
 
 
-app.use("/api/v1/auth", authRoute);
+// app.use("/api/v1/auth", authRoute);
 
 
 
