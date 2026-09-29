@@ -8,7 +8,7 @@ export const pool = new Pool({
 
 export const initDB = async () => {
   await pool.query(`
-       CREATE TABLE tasks (
+       CREATE TABLE IF NOT EXISTS tasks(
     id SERIAL PRIMARY KEY,
     title VARCHAR(150) NOT NULL,
     description TEXT,
