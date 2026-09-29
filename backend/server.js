@@ -4,8 +4,9 @@ import config from "./config/index.js";
 import {taskRoutes} from "./modules/task/task.route.js";
 const app = express();
 
+// middleware
+app.use(cors());
 app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
 
 const port = config.port;
  initDB();
