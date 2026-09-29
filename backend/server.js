@@ -2,6 +2,7 @@ import express from "express";
 import { initDB } from "./database/db.js";
 import config from "./config/index.js";
 import {taskRoutes} from "./modules/task/task.route.js";
+import cors from "cors";
 const app = express();
 
 // middleware
