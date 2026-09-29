@@ -1,4 +1,4 @@
-const pool = require("../config/db");
+import {pool} from "../../database/db.js";
 
 // Get all tasks
 const getAllTasks = async () => {
@@ -19,7 +19,7 @@ const getTaskById = async (id) => {
   return result.rows[0];
 };
 
-// Create a new task
+// Create new task
 const createTask = async (taskData) => {
   const { title, description, priority, status } = taskData;
 
@@ -75,7 +75,7 @@ const deleteTask = async (id) => {
   return result.rows[0];
 };
 
-module.exports = {
+export const taskService = {
   getAllTasks,
   getTaskById,
   createTask,

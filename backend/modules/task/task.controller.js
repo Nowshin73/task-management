@@ -1,4 +1,4 @@
-const taskService = require("../services/task.service");
+import {taskService} from "./task.service.js";
 
 // Get all tasks
 const getAllTasks = async (req, res) => {
@@ -235,7 +235,7 @@ const deleteTask = async (req, res) => {
   }
 };
 
-module.exports = {
+export const taskController = {
   getAllTasks,
   getTaskById,
   createTask,

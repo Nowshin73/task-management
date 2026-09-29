@@ -1,32 +1,16 @@
-const express = require("express");
-
-const {
-  getAllTasks,
-  getTaskById,
-  createTask,
-  updateTask,
-  updateTaskStatus,
-  deleteTask,
-} = require("../controllers/task.controller");
+import express from "express";
+import {
+  taskController
+} from"./task.controller.js";
 
 const router = express.Router();
 
-// GET /api/tasks
-router.get("/", getAllTasks);
 
-// GET /api/tasks/:id
-router.get("/:id", getTaskById);
+router.get("/", taskController.getAllTasks);
+router.get("/:id", taskController.getTaskById);
+router.post("/", taskController.createTask);
+router.put("/:id", taskController.updateTask);
+router.patch("/:id/status", taskController.updateTaskStatus);
+router.delete("/:id", taskController.deleteTask);
 
-// POST /api/tasks
-router.post("/", createTask);
-
-// PUT /api/tasks/:id
-router.put("/:id", updateTask);
-
-// PATCH /api/tasks/:id/status
-router.patch("/:id/status", updateTaskStatus);
-
-// DELETE /api/tasks/:id
-router.delete("/:id", deleteTask);
-
-module.exports = router;
+export const taskRoutes = router;
