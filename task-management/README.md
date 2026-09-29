@@ -1,16 +1,59 @@
-# React + Vite
+Task Management Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack task management application built with React, Node.js, Express.js, and PostgreSQL (Neon).
 
-Currently, two official plugins are available:
+Features
+Create, view, update, and delete tasks
+Task priority: Low, Medium, High
+Task status: Pending, In Progress, Completed
+Filter tasks by priority and status
+Sort tasks by creation date
+Responsive React UI
+PostgreSQL database integration
+REST API with Express.js
+Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Frontend
 
-## React Compiler
+React
+Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Backend
 
-## Expanding the ESLint configuration
+Node.js
+Express.js
+PostgreSQL
+Neon Database
+Setup
+Backend
+cd backend
+npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Create a .env file:
+
+CONNECTION_STR=your_neon_database_connection_string
+PORT=5000
+
+Start the server:
+
+npm run dev
+Frontend
+cd frontend
+npm install
+npm run dev
+
+Make sure the backend is running on:
+
+http://localhost:5000
+API Endpoints
+Method	Endpoint	Description
+GET	/api/tasks	Get all tasks
+GET	/api/tasks/:id	Get a task
+POST	/api/tasks	Create a task
+PUT	/api/tasks/:id	Update a task
+PATCH	/api/tasks/:id/status	Update task status
+DELETE	/api/tasks/:id	Delete a task
+Author
+
+Nowshin Nawar
+B.Sc. & M.Sc. in Computer Science & Engineering
