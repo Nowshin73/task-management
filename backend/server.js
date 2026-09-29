@@ -1,6 +1,6 @@
 import express from "express";
-import { initDB } from "./database/db";
-import config from "./config";
+import { initDB } from "./database/db.js";
+import config from "./config/index.js";
 
 const app = express();
 
